@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <img src="image/cksdk_01.png">
+
+<canvas id="myCanvas" width="250" height="322">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+    /////////////////////////////////////////////////
+    // 변수 초기화
+    var frame = 0;      // 애니메이션 프레임
+    var ImgArray = [];  // 애니메이션 이미지
+
+    var image;
+
+    image= new Image();
+    image.src = "image/cksdk_01.png";
+    ImgArray.push(image);
+
+    image = new Image();
+    image.src = "image/cksdk_02.png";
+    ImgArray.push(image);
+    /////////////////////////////////////////////////
+    var render = function () {
+        // 프레임 증가
+        frame++;
+        if (frame >= ImgArray.length) frame = 0;
+
+        // 그리기
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, 300, 322);
+
+        context.drawImage(ImgArray[frame], 0, 0);
+    }
+    /////////////////////////////////////////////////////
+    // 100/1000초 마다 render 함수를 호출함.
+    window.onload = function () {
+        setInterval(render, 100);
+    }
+</script>
+
 </body>
 </html>
