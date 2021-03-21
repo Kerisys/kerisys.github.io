@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+    .status-selector input{
+        margin:0;padding:0;
+        -webkit-appearance:none;
+           -moz-appearance:none;
+                appearance:none;
+    }
+
+    .status-selector input:active + .cc-selector-radio{
+        -webkit-filter: none;
+           -moz-filter: none;
+                filter: none;
+    }
+    .status-selector input:checked + .cc-selector-radio{
+        -webkit-filter: none;
+           -moz-filter: none;
+                filter: none;
+    }
+
+    .status_0{background-image:url(image/diary/status/0_sad.png);}
+    .status_1{background-image:url(image/diary/status/1_angry.png);}
+    .status_2{background-image:url(image/diary/status/2_normal.png);}
+    .status_3{background-image:url(image/diary/status/3_good.png);}
+    .status_4{background-image:url(image/diary/status/4_happy.png);}
+    .status_5{background-image:url(image/diary/status/5_nice.png);}
+
+    .cc-selector-radio {
+        cursor:pointer;
+        background-size:contain;
+        background-repeat:no-repeat;
+        display:inline-block;
+        width:100px;height:70px;
+        -webkit-transition: all 100ms ease-in;
+           -moz-transition: all 100ms ease-in;
+                transition: all 100ms ease-in;
+        -webkit-filter: grayscale(1) brightness(0);
+           -moz-filter: grayscale(1) brightness(0);
+                filter: grayscale(1) brightness(0);
+    }
+    .cc-selector-radio:hover{
+        -webkit-filter: grayscale(0);
+           -moz-filter: grayscale(0);
+                filter: grayscale(0);
+    }
+</style>
+
+</head>
+<body>
+
+<div>
+    <input type="date"><input type="time"><br>
+</div>
+
+<div class="status-selector">
+    <input id="status_0" type="radio" name="status" value="0"/>
+    <label class="cc-selector-radio status_0" for="status_0"></label>
+    <input id="status_1" type="radio" name="status" value="1"/>
+    <label class="cc-selector-radio status_1" for="status_1"></label>
+    <input id="status_2" type="radio" name="status" value="2"/>
+    <label class="cc-selector-radio status_2" for="status_2"></label>
+    <input id="status_3" type="radio" name="status" value="3"/>
+    <label class="cc-selector-radio status_3" for="status_3"></label>
+    <input id="status_4" type="radio" name="status" value="4"/>
+    <label class="cc-selector-radio status_4" for="status_4"></label>
+    <input id="status_5" type="radio" name="status" value="5"/>
+    <label class="cc-selector-radio status_5" for="status_5"></label>
+</div>
+
+<div>
+    <label>note</label><br>
+    <textarea></textarea>
+</div>
+</body>
+</html>
